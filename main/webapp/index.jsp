@@ -1,6 +1,6 @@
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="/core_content/header.jspp"%>
 
-<c:url var="list" value="/course/list" />
+<c:url var="list" value="/person/list" />
 
 <div class="container">
 	<h1>Spring boot application</h1>
@@ -13,4 +13,4 @@
 	</p>
 </div>
 
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="/core_content/footer.jspp"%>

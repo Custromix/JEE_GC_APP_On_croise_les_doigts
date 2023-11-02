@@ -2,13 +2,15 @@ package mybootapp.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import mybootapp.Model.Person;
+import mybootapp.Repository.PersonRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
-import mybootapp.Model.Course;
-import mybootapp.Repository.CourseRepository;
+import mybootapp.Model.Person;
+import mybootapp.Repository.PersonRepository;
 import mybootapp.Controller.Starter;
 
 @SpringBootTest
@@ -16,11 +18,11 @@ import mybootapp.Controller.Starter;
 public class MyTest {
 
 	@Autowired
-	CourseRepository cr;
+	PersonRepository cr;
 
 	@Test
 	public void testSave() {
-		var c = cr.save(new Course("Test 1"));
+		var c = cr.save(new Person());
 		var c2 = cr.findById(c.getId());
 		assertEquals(c2.get().getName(), "Test 1");
 		System.err.printf("course id = %d\n", c.getId());

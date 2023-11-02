@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/")
-public class MyControler {
+public class IndexController {
 
 	/*
 	 * Récupérer un message particulier dans le fichier de configuration pour ne pas
@@ -21,7 +21,7 @@ public class MyControler {
 	 */
 	@RequestMapping("")
 	public ModelAndView index() {
-		return new ModelAndView("index", "message", message);
+		return new ModelAndView("/index.jsp", "message", message);
 	}
 
 }

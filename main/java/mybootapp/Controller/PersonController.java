@@ -8,40 +8,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import mybootapp.Model.Person;
-import mybootapp.Repository.CourseRepository;
+import mybootapp.Repository.PersonRepository;
 
 @Controller
-@RequestMapping("/course")
-public class CourseControler {
+@RequestMapping("/person")
+public class PersonController {
 
 	/*
 	 * Injection de la DAO de manipulation des cours.
 	 */
 	@Autowired
-	CourseRepository repo;
+	private PersonRepository repository;
 
 	@PostConstruct
 	public void init() {
-		repo.save(new Person());
-		repo.save(new Person());
+		repository.save(new Person());
+		repository.save(new Person());
 	}
 
 	@RequestMapping("/list")
 	public ModelAndView listCourses() {
-		return new ModelAndView("course", "courses", repo.findAll());
+		return new ModelAndView("person", "courses", repository.findAll());
 	}
 
 	@RequestMapping("/new")
 	public String newCourse() {
-		final var course = new Person();
-		repo.save(course);
-		return "redirect:/course/list";
+		final var person = new Person();
+		repository.save(person);
+		return "redirect:/person/list";
 	}
 
 	@RequestMapping("/find")
 	public ModelAndView findCourses(String name) {
-		final var result = repo.findByNameLike("%" + name + "%");
-		return new ModelAndView("course", "courses", result);
+		final var result = repository.findByNameLike("%" + name + "%");
+		return new ModelAndView("person", "courses", result);
 	}
 
 }
