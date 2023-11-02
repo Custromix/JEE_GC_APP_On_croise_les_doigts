@@ -2,14 +2,15 @@ package mybootapp.Repository;
 
 import java.util.List;
 
+import mybootapp.Model.Person;
 import org.springframework.data.repository.CrudRepository;
 
-import mybootapp.Model.Course;
+import mybootapp.Model.Person;
 
-public interface CourseRepository extends CrudRepository<Course, Long> {
+public interface CourseRepository extends CrudRepository<Person, Long> {
 
-	List<Course> findByName(String name);
+	List<Person> findByName(String name);
 
-	List<Course> findByNameLike(String name);
+	List<Person> findByNameLike(String name);
 
 }

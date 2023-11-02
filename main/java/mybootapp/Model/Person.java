@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Course {
+public class Person {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,8 +23,8 @@ public class Course {
 	@Column(nullable = false)
 	private String name;
 
-	public Course(String name) {
-		this(null, name);
+	public Person() {
+
 	}
 
 }

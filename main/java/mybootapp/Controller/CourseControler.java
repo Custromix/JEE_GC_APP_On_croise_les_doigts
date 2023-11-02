@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import mybootapp.Model.Course;
+import mybootapp.Model.Person;
 import mybootapp.Repository.CourseRepository;
 
 @Controller
@@ -22,8 +22,8 @@ public class CourseControler {
 
 	@PostConstruct
 	public void init() {
-		repo.save(new Course("Architecture JEE"));
-		repo.save(new Course("Données post-relationnelles"));
+		repo.save(new Person());
+		repo.save(new Person());
 	}
 
 	@RequestMapping("/list")
@@ -33,7 +33,7 @@ public class CourseControler {
 
 	@RequestMapping("/new")
 	public String newCourse() {
-		final var course = new Course(String.format("UE %d", System.currentTimeMillis()));
+		final var course = new Person();
 		repo.save(course);
 		return "redirect:/course/list";
 	}
