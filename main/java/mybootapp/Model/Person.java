@@ -5,7 +5,6 @@ import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import mybootapp.Controller.GroupController;
 
 @Entity
 @Data
@@ -30,7 +29,7 @@ public class Person {
 	private String adress;
 
 	@ManyToOne
-	private Groupe groups;
+	private Group groups;
 
 
 }
