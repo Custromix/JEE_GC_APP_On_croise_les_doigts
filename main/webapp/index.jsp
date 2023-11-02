@@ -1,4 +1,4 @@
-<%@ include file="/core_content/header.jspp"%>
+<%@ include file="/core_content/header.jsp"%>
 
 <c:url var="list" value="/person/list" />
 
@@ -13,4 +13,4 @@
 	</p>
 </div>
 
-<%@ include file="/core_content/footer.jspp"%>
+<%@ include file="/core_content/footer.jsp"%>

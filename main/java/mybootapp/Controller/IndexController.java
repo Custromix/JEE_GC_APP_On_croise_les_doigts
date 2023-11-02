@@ -21,7 +21,7 @@ public class IndexController {
 	 */
 	@RequestMapping("")
 	public ModelAndView index() {
-		return new ModelAndView("/index.jsp", "message", message);
+		return new ModelAndView("/index", "message", message);
 	}
 
 }
