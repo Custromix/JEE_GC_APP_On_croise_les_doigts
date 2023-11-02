@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
-import mybootapp.Model.Person;
-import mybootapp.Repository.PersonRepository;
-import mybootapp.Controller.Starter;
+import mybootapp.Starter;
 
 @SpringBootTest
 @ContextConfiguration(classes = Starter.class)

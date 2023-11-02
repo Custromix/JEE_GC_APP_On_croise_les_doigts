@@ -1,4 +1,4 @@
-package mybootapp.Controller;
+package mybootapp;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

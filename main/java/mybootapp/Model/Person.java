@@ -1,17 +1,15 @@
 package mybootapp.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mybootapp.Controller.GroupController;
 
 @Entity
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class Person {
 
@@ -22,8 +20,17 @@ public class Person {
 	@Column(nullable = true)
 	private String name;
 
-	public Person() {
+	@Column(nullable = true)
+	private String firstname;
 
-	}
+	@Column(nullable = true)
+	private String username;
+
+	@Column(nullable = true)
+	private String adress;
+
+	@ManyToOne
+	private Groupe groups;
+
 
 }
